@@ -9,8 +9,6 @@
 // DON’T PROCEED UNTIL YOU’RE SURE ESLINT AND EDITORCONFIG ARE WORKING CORRECTLY
 // -----------------------------------------------------------------------------
 
-window.onload = () => {
-};
 
 document.addEventListener(`DOMContentLoaded`, () => {
 
@@ -39,7 +37,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
         slidesContainer.innerHTML = albums.map((album, index) => `
             <div class="slide ${index === 0 ? `active` : ``}">
                 <a href="${album.url}" target="_blank">
-                    <img src="img/12392240423_1ebe6a740d_z.jpg" alt="${album.cover_image.alt_content}" width="640">
+                    <img src="${album.cover_image.path}" alt="${album.cover_image.alt_content}" width="640">
                 </a>
                 <h3>${album.album}</h3>
                 <p>${album.artist}</p>
@@ -50,6 +48,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 </section>
             </div>
         `).join(``);
+        console.log(`hello`);
     };
 
     const nextSlide = () => {
